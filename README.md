@@ -3,3 +3,4 @@
 
 ## 使い方
     ruby rec_hibiki.rb llss
+    ruby rec_hibiki.rb tsunradi
