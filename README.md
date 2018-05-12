@@ -12,6 +12,6 @@ docker build -t rec_hibiki .
 ## Usage
 
 ```
-docker run -v $PWD:/output -it rec_hibiki llss
-docker run -v $PWD:/output -it rec_hibiki tsunradi
+docker run --rm -v $PWD:/output -it rec_hibiki llss
+docker run --rm -v $PWD:/output -it rec_hibiki tsunradi
 ```
