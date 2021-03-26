@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
 gem 'mechanize'
-gem 'aws-sdk'
+gem 'aws-sdk-s3'
