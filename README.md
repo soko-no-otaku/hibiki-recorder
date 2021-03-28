@@ -14,6 +14,6 @@ docker pull evoltaro/rec_hibiki
 ## Usage
 
 ```
-docker run --rm -v $PWD:/output -it evoltaro/rec_hibiki llss
-docker run --rm -v $PWD:/output -it evoltaro/rec_hibiki tsunradi
+docker run --rm -v $PWD:/output evoltaro/rec_hibiki llss
+docker run --rm -v $PWD:/output evoltaro/rec_hibiki tsunradi
 ```

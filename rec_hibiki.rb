@@ -54,14 +54,23 @@ class HiBiKiRecorder
     object.upload_file(output_filename)
   end
 
+  def have_s3_envs?
+     ENV['ACCESS_KEY_ID'] \
+     && ENV['SECRET_ACCESS_KEY'] \
+     && ENV['REGION'] \
+     && ENV['BUCKET_NAME']
+  end
+
   def save_latest_episode(access_id)
     program_info = get_program_info(access_id)
     video_id = program_info['episode']['video']['id']
     playlist_url = get_playlist_url(video_id)
     output_filename = get_output_filename(program_info)
 
-    run_ffmpeg(playlist_url, output_filename)
-    upload_to_s3(access_id, output_filename)
+    Dir.chdir('/output') do
+      run_ffmpeg(playlist_url, output_filename)
+      upload_to_s3(access_id, output_filename) if have_s3_envs?
+    end
   end
 end
 
